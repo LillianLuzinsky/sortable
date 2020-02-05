@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import { sortableContainer, sortableElement } from 'react-sortable-hoc';
+import arrayMove from 'array-move';
 import './App.css';
-
 import Gif from './gif';
+
+const SortableGifsContainer = sortableContainer(({ children }) => <div className="gifs">{children}</div>);
+const SortableGif = sortableElement(({ gif }) => <Gif key={gif} gif={gif} />);
 
 const App = () => {
   const [gifs, setGifs] = useState([
@@ -11,13 +15,19 @@ const App = () => {
     'https://media.giphy.com/media/xT1XGYy9NPhWRPp4pq/giphy.gif',
   ]);
 
+  const onSortEnd = ({ oldIndex, newIndex }) => setGifs(arrayMove(gifs, oldIndex, newIndex));
 
   return (
-    <div className="App">
-      <h1>Drag those GIFs around</h1>
-      <h2>Set 1</h2>
-      {gifs.map((gif, i) => <Gif key={gif} gif={gif} />)}
-    </div>
+    <SortableGifsContainer axis="x" onSortEnd={onSortEnd}>
+      {gifs.map((gif, i) =>
+        <SortableGif
+          // don't forget to pass index prop with item index
+          index={i}
+          key={gif}
+          gif={gif}
+        />
+      )}
+    </SortableGifsContainer>
   );
 }
 
