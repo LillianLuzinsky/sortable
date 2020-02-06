@@ -10,7 +10,8 @@ const SortableGif = sortableElement(({ gif }) => <Gif key={gif} gif={gif} />);
 
 const App = () => {
   const [gifs, setGifs] = useState([
-    'https://media.giphy.com/media/3ohhwoWSCtJzznXbuo/giphy.gif',
+    './letters/a.svg',
+    './letters/b.svg',
     'https://media.giphy.com/media/l46CbZ7KWEhN1oci4/giphy.gif',
     'https://media.giphy.com/media/3ohzgD1wRxpvpkDCSI/giphy.gif',
     'https://media.giphy.com/media/xT1XGYy9NPhWRPp4pq/giphy.gif',
