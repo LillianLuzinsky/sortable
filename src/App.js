@@ -18,10 +18,33 @@ const App = () => {
   ]);
 
   const [newGifs, setNewGifs] = useState([
-    'https://media.giphy.com/media/xiOgHgY2ceKhm46cAj/giphy.gif',
-    'https://media.giphy.com/media/3oKIPuMqYfRsyJTWfu/giphy.gif',
-    'https://media.giphy.com/media/4ZgLPakqTajjVFOVqw/giphy.gif',
-    'https://media.giphy.com/media/3o7btXIelzs8nBnznG/giphy.gif',
+    './letters/a.svg',
+    './letters/b.svg',
+    './letters/c.svg',
+    './letters/d.svg',
+    './letters/e.svg',
+    './letters/f.svg',
+    './letters/g.svg',
+    './letters/h.svg',
+    './letters/i.svg',
+    './letters/j.svg',
+    './letters/k.svg',
+    './letters/l.svg',
+    './letters/m.svg',
+    './letters/n.svg',
+    './letters/o.svg',
+    './letters/p.svg',
+    './letters/q.svg',
+    './letters/r.svg',
+    './letters/s.svg',
+    './letters/t.svg',
+    './letters/u.svg',
+    './letters/v.svg',
+    './letters/w.svg',
+    './letters/x.svg',
+    './letters/y.svg',
+    './letters/z.svg'
+
   ]);
 
   const onSortEnd = ({ oldIndex, newIndex, collection }) => {
